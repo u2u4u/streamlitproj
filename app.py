@@ -5,7 +5,7 @@ from pathlib import Path
 print(Path.cwd())
 print('1---------------------------------')
 #open and read the file after the appending:
-f = open("files/demofile2.txt", "r")
+f = open("demofile2.txt", "r")
 print(f.read()) 
 print('2---------------------------------')
 import os
@@ -19,5 +19,5 @@ print('Absolute path of file:     ',
 print('Absolute directoryname: ',
       os.path.dirname(os.path.abspath(__file__)))
 print('5---------------------------------')
-nfile = 'files/demofile2.txt'
+nfile = 'demofile2.txt'
 print("Path of the file..", os.path.abspath(nfile))
