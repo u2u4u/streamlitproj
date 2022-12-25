@@ -12,7 +12,6 @@ bulkchan=-1001861555690
 @st.cache(suppress_st_warning=True)
 def sendmes():
       res=bot.send_message(bulkchan,"STREAMLIT")
-      time.sleep(2)
 header=st.container()
 with header:
       st.title('Hello Guys444')
