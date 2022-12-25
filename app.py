@@ -3,28 +3,22 @@ import telethon
 from telegram import Bot
 import time
 from random import randint
-import time
+
 import os
 
 TOKEN="5835458437:AAEQLztS3xnaPX2BtY183nV2aTXgssZa-5o"#oosfeebot
 bot=Bot(TOKEN)
 bulkchan=-1001861555690
-from dummy import *
+
+@st.cache(persist=True)
 def sendmes():
       res=bot.send_message(bulkchan,"STREAMLIT")
 header=st.container()
 with header:
       st.title('Hello Guys666')
 
-def refresher(seconds):
-    while True:
-        mainDir = os.path.dirname(__file__)
-        filePath = os.path.join(mainDir, 'dummy.py')
-        with open(filePath, 'w') as f:
-            f.write(f'# {randint(0, 10000)}')
-        time.sleep(seconds)
+
 sendmes()
-refresher(5)
 
 
 # f = open("demofile2.txt", "w")
