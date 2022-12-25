@@ -1,16 +1,19 @@
 import streamlit as st
 import telethon
 from telegram import Bot
-
+import time
 TOKEN="5835458437:AAEQLztS3xnaPX2BtY183nV2aTXgssZa-5o"#oosfeebot
 bot=Bot(TOKEN)
 bulkchan=-1001861555690
-res=bot.send_message(bulkchan,"STREAMLIT")
+@st.cache(suppress_st_warning=True)
+def sendmes():
+      res=bot.send_message(bulkchan,"STREAMLIT")
+      time.sleep(2)
 header=st.container()
 with header:
-      st.title('Hello Guys222')
+      st.title('Hello Guys333')
 
-
+sendmes()
 
 
 f = open("demofile2.txt", "w")
