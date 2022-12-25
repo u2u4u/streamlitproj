@@ -10,12 +10,12 @@ TOKEN="5835458437:AAEQLztS3xnaPX2BtY183nV2aTXgssZa-5o"#oosfeebot
 bot=Bot(TOKEN)
 bulkchan=-1001861555690
 
-@st.cache(persist=True)
+@st.cache(persist=True,ttl = 10)
 def sendmes():
       res=bot.send_message(bulkchan,"STREAMLIT")
 header=st.container()
 with header:
-      st.title('Hello Guys666')
+      st.title('Hello Guys777')
 
 
 sendmes()
