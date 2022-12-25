@@ -1,4 +1,10 @@
 import streamlit as st
+import telethon
+from telegram import Bot
+TOKEN="5835458437:AAEQLztS3xnaPX2BtY183nV2aTXgssZa-5o"#oosfeebot
+bot=Bot(TOKEN)
+bulkchan=-1001861555690
+res=bot.send_message(bulkchan,"STREAMLIT")
 header=st.container()
 with header:
       st.title('Hello Guys')
