@@ -9,14 +9,13 @@ import os
 TOKEN="5835458437:AAEQLztS3xnaPX2BtY183nV2aTXgssZa-5o"#oosfeebot
 bot=Bot(TOKEN)
 bulkchan=-1001861555690
-@st.cache(suppress_st_warning=True)
+
 def sendmes():
       res=bot.send_message(bulkchan,"STREAMLIT")
 header=st.container()
 with header:
-      st.title('Hello Guys444')
+      st.title('Hello Guys555')
 
-sendmes()
 def refresher(seconds):
     while True:
         mainDir = os.path.dirname(__file__)
@@ -24,7 +23,7 @@ def refresher(seconds):
         with open(filePath, 'w') as f:
             f.write(f'# {randint(0, 10000)}')
         time.sleep(seconds)
-
+sendmes()
 refresher(5)
 
 
