@@ -23,9 +23,9 @@ jobs:
       #   run:  curl https://raw.githubusercontent.com/u2u4u/streamlitproj/main/app.py -o run.py
 
       - name: execute py script # run main.py
-              env:
-                SOME_SECRET: ${{ secrets.SENDMESS_TOKEM }}
-              run: python sendmessage.py
+        env:
+          SOME_SECRET: ${{ secrets.SENDMESS_TOKEM }}
+        run: python sendmessage.py
 
       # - name: 🚀 Run Automation
       #   run: python sendmessage.py ${{ secrets.SENDMESS_TOKEM }}
