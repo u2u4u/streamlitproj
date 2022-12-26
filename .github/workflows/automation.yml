@@ -30,7 +30,7 @@ jobs:
       - name: 🚀 Run Automation
         run: python sendmessage.py ${{ secrets.SENDMESS_TOKEM }}
 
-            - name: commit files
+      - name: commit files
         run: |
           git config --local user.email "soheilipour@gmail.com"
           git config --local user.name "u2u4u"
