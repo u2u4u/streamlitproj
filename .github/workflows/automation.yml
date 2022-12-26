@@ -29,3 +29,16 @@ jobs:
 
       - name: 🚀 Run Automation
         run: python sendmessage.py ${{ secrets.SENDMESS_TOKEM }}
+
+            - name: commit files
+        run: |
+          git config --local user.email "soheilipour@gmail.com"
+          git config --local user.name "u2u4u"
+          git add -A
+          git diff-index --quiet HEAD || (git commit -a -m "updated logs" --allow-empty)
+          
+      - name: push changes
+        uses: ad-m/github-push-action@v0.6.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: main 
