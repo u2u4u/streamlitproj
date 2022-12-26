@@ -11,24 +11,29 @@ jobs:
       - name: 🍽️ Checkout the repo
         uses: actions/checkout@v2 # checkout the repository content to github runner
 
-      - name: 🐍 Set up Python 3.8
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.9'
+      # - name: 🐍 Set up Python 3.8
+      #   uses: actions/setup-python@v4
+      #   with:
+      #     python-version: '3.9'
 
-      - name: 💿 Install python-telegram-bot Python package
-        run: pip install python-telegram-bot
+      # - name: 💿 Install python-telegram-bot Python package
+      #   run: pip install python-telegram-bot
 
       # - name: 📥 Download the Python script needed for automation
       #   run:  curl https://raw.githubusercontent.com/u2u4u/streamlitproj/main/app.py -o run.py
 
-      - name: execute py script # run main.py
-        env:
-          SOME_SECRET: ${{ secrets.SENDMESS_TOKEM }}
-        run: python sendmessage.py
+      # - name: execute py script # run main.py
+      #   env:
+      #     SOME_SECRET: ${{ secrets.SENDMESS_TOKEM }}
+      #   run: python sendmessage.py
 
       # - name: 🚀 Run Automation
       #   run: python sendmessage.py ${{ secrets.SENDMESS_TOKEM }}
+      - name: makenewfile
+        run: |
+          file_name=test_files.txt
+          current_time=$(date "+%Y.%m.%d-%H.%M.%S")
+          echo "$current_time" > test_files.txt
 
       - name: commit files
         run: |
