@@ -1,25 +1,20 @@
-name: Zotero to Readwise Automation
+name: Test Action
 
 on:
-  push:
-    branches:
-      - master
   schedule:
-    - cron: "*/5 * * * *" # Runs at 03:00 AM (UTC) every day (Check https://crontab.guru/)
+    - cron: '*/5 * * * *' # At 00:00 on Monday
 
 jobs:
-  zotero-to-readwise-automation:
+  My_tests:
     runs-on: ubuntu-latest
     steps:
       - name: 🍽️ Checkout the repo
-        uses: actions/checkout@master
-        with:
-          fetch-depth: 1
+        uses: actions/checkout@v2 # checkout the repository content to github runner
 
       - name: 🐍 Set up Python 3.8
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v4
         with:
-          python-version: '3.8'
+          python-version: '3.9'
 
       - name: 💿 Install python-telegram-bot Python package
         run: pip install python-telegram-bot
@@ -27,8 +22,13 @@ jobs:
       # - name: 📥 Download the Python script needed for automation
       #   run:  curl https://raw.githubusercontent.com/u2u4u/streamlitproj/main/app.py -o run.py
 
-      - name: 🚀 Run Automation
-        run: python sendmessage.py ${{ secrets.SENDMESS_TOKEM }}
+      - name: execute py script # run main.py
+              env:
+                SOME_SECRET: ${{ secrets.SENDMESS_TOKEM }}
+              run: python sendmessage.py
+
+      # - name: 🚀 Run Automation
+      #   run: python sendmessage.py ${{ secrets.SENDMESS_TOKEM }}
 
       - name: commit files
         run: |
