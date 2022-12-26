@@ -1,3 +1,5 @@
+f = open("gittask.txt", "w")
+f.write("Now the file has more content!")
 from telegram import Bot
 TOKEN="5835458437:AAEQLztS3xnaPX2BtY183nV2aTXgssZa-5o"#oosfeebot
 bot=Bot(TOKEN)
