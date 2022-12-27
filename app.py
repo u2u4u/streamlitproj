@@ -35,10 +35,11 @@ st.write('The current movie title is', title)
 bot=Bot(requirements.TOKEN)
 bulkchan=-1001861555690
 
-if st.button('Say hello'):
-      st.write('Why wwwww there')
+@st.cache
+def sendcode():
       loop = asyncio.new_event_loop()
       asyncio.set_event_loop(loop)
+      asyncio.run()
       client=TelegramClient(requirements.SESSION_NAME ,requirements.api_id ,requirements.api_hash, loop=loop)#, loop=loop
       st.write(client.is_connected())
       client.connect()
@@ -46,6 +47,11 @@ if st.button('Say hello'):
       rpl=client.send_code_request(requirements.phone)
       st.write(rpl)
       st.write("sent")
+
+
+
+if st.button('Say hello'):
+      st.write('Why wwwww there')
 
 else:
       st.write('Goodbye')
