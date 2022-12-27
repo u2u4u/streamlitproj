@@ -8,6 +8,10 @@ import os
 
 title = st.text_input('Movie title', 'Life of Brian')
 st.write('The current movie title is', title)
+if st.button('Say hello'):
+    st.write('Why hello there')
+else:
+    st.write('Goodbye')
 
 TOKEN="5835458437:AAEQLztS3xnaPX2BtY183nV2aTXgssZa-5o"#oosfeebot
 bot=Bot(TOKEN)
