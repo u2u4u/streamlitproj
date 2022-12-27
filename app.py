@@ -1,10 +1,14 @@
 import streamlit as st
+import apps
 import telethon
 from telegram import Bot
 import time
 from random import randint
 
 import os
+
+title = st.text_input('Movie title', 'Life of Brian')
+st.write('The current movie title is', title)
 
 TOKEN="5835458437:AAEQLztS3xnaPX2BtY183nV2aTXgssZa-5o"#oosfeebot
 bot=Bot(TOKEN)
