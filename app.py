@@ -48,7 +48,7 @@ def sendcode(loop):
       rpl=client.send_code_request(requirements.phone)
       st.write(rpl)
       st.write("sent")
-
+      client.disconnect()
 
 
 if st.button('Say hello'):
