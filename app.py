@@ -35,7 +35,7 @@ st.write('The current movie title is', title)
 bot=Bot(requirements.TOKEN)
 bulkchan=-1001861555690
 
-@st.cache
+# @st.cache
 def sendcode():
       loop = asyncio.new_event_loop()
       asyncio.set_event_loop(loop)
