@@ -1,5 +1,4 @@
 import streamlit as st
-import apps
 import telethon
 from telegram import Bot
 import time
