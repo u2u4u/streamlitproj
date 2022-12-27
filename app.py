@@ -39,7 +39,6 @@ bulkchan=-1001861555690
 def sendcode():
       loop = asyncio.new_event_loop()
       asyncio.set_event_loop(loop)
-      asyncio.run()
       client=TelegramClient(requirements.SESSION_NAME ,requirements.api_id ,requirements.api_hash, loop=loop)#, loop=loop
       st.write(client.is_connected())
       client.connect()
@@ -52,6 +51,7 @@ def sendcode():
 
 if st.button('Say hello'):
       st.write('Why wwwww there')
+      sendcode()
 
 else:
       st.write('Goodbye')
