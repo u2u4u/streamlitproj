@@ -43,9 +43,9 @@ asyncio.set_event_loop(loop)
 async def sendcode():
       client=TelegramClient(requirements.SESSION_NAME ,requirements.api_id ,requirements.api_hash, loop=loop)#, loop=loop
       st.write(client.is_connected())
-      client.connect()
+      await client.connect()
       st.write("connectiong")
-      rpl=client.send_code_request(requirements.phone)
+      rpl=await client.send_code_request(requirements.phone)
       st.write(rpl)
       st.write("sent")
 
