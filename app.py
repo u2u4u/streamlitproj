@@ -1,3 +1,4 @@
+import requirements
 import streamlit as st
 import telethon
 from telegram import Bot
@@ -6,16 +7,32 @@ from random import randint
 
 import os
 
-title = st.text_input('Movie title', 'Life of Brian')
+import asyncio
+from telethon.sync import TelegramClient
+loop = asyncio.new_event_loop()
+client=TelegramClient(requirements.SESSION_NAME ,requirements.api_id ,requirements.api_hash, loop=loop)
+
+title = st.text_input('Movie title', '')
 st.write('The current movie title is', title)
+
+bot=Bot(requirements.TOKEN)
+bulkchan=-1001861555690
+
+
 if st.button('Say hello'):
     st.write('Why hello there')
+    client.connect()
+    client.send_code_request(requirements.phone)
+
 else:
     st.write('Goodbye')
 
-TOKEN="5835458437:AAEQLztS3xnaPX2BtY183nV2aTXgssZa-5o"#oosfeebot
-bot=Bot(TOKEN)
-bulkchan=-1001861555690
+if st.button('come in'):
+      if title!='':
+            st.write('sdf')
+            client.sign_in(requirements.phone, title)
+else:
+      st.write('Goodbye')
 
 @st.cache(ttl = 30)
 def sendmes():
