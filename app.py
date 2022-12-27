@@ -4,29 +4,51 @@ import telethon
 from telegram import Bot
 import time
 from random import randint
-
+import requests
 import os
 
 import asyncio
 from telethon.sync import TelegramClient
-loop = asyncio.new_event_loop()
-asyncio.set_event_loop(loop)
-client=TelegramClient(requirements.SESSION_NAME ,requirements.api_id ,requirements.api_hash)#, loop=loop
 
-title = st.text_input('Movie title', '')
+# asyncio.set_event_loop(loop)
+import asyncio
+
+
+# def get_or_create_eventloop():
+#     try:
+#         return asyncio.get_event_loop()
+#     except RuntimeError as ex:
+#       if "There is no current event loop in thread" in str(ex):
+#             loop = asyncio.new_event_loop()
+#             asyncio.set_event_loop(loop)
+#             return asyncio.get_event_loop()
+# get_or_create_eventloop()
+# if "loop" not in st.session_state:
+#     st.session_state.loop = asyncio.new_event_loop()
+# asyncio.set_event_loop(st.session_state.loop)
+
+
+
+title = st.text_input('Movie title2222', '')
 st.write('The current movie title is', title)
 
 bot=Bot(requirements.TOKEN)
 bulkchan=-1001861555690
 
-
 if st.button('Say hello'):
-    st.write('Why hello there')
-    client.connect()
-    client.send_code_request(requirements.phone)
+      st.write('Why wwwww there')
+      loop = asyncio.new_event_loop()
+      asyncio.set_event_loop(loop)
+      client=TelegramClient(requirements.SESSION_NAME ,requirements.api_id ,requirements.api_hash, loop=loop)#, loop=loop
+      st.write(client.is_connected())
+      client.connect()
+      st.write("connectiong")
+      rpl=client.send_code_request(requirements.phone)
+      st.write(rpl)
+      st.write("sent")
 
 else:
-    st.write('Goodbye')
+      st.write('Goodbye')
 
 if st.button('come in'):
       if title!='':
@@ -43,7 +65,7 @@ with header:
       st.title('Hello Guys*******')
 
 
-sendmes()
+# sendmes()
 
 
 # f = open("demofile2.txt", "w")
