@@ -11,7 +11,7 @@ import asyncio
 from telethon.sync import TelegramClient
 loop = asyncio.new_event_loop()
 asyncio.set_event_loop(loop)
-client=TelegramClient(requirements.SESSION_NAME ,requirements.api_id ,requirements.api_hash, loop=loop)
+client=TelegramClient(requirements.SESSION_NAME ,requirements.api_id ,requirements.api_hash)#, loop=loop
 
 title = st.text_input('Movie title', '')
 st.write('The current movie title is', title)
