@@ -40,12 +40,12 @@ asyncio.set_event_loop(loop)
 
 
 # @st.cache
-async def sendcode():
+def sendcode(loop):
       client=TelegramClient(requirements.SESSION_NAME ,requirements.api_id ,requirements.api_hash, loop=loop)#, loop=loop
       st.write(client.is_connected())
-      await client.connect()
+      client.connect()
       st.write("connectiong")
-      rpl=await client.send_code_request(requirements.phone)
+      rpl=client.send_code_request(requirements.phone)
       st.write(rpl)
       st.write("sent")
 
@@ -53,8 +53,7 @@ async def sendcode():
 
 if st.button('Say hello'):
       st.write('Why wwwww there')
-      loop.run_until_complete(sendcode())
-
+      sendcode(loop)
 else:
       st.write('Goodbye')
 
