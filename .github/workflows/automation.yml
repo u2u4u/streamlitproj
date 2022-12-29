@@ -1,15 +1,17 @@
-name: make and commit file
+#*****************************Original Commented
+# name: make and commit file
 
-on:
-  schedule:
-    - cron: '*/5 * * * *' # At 00:00 on Monday
+# on:
+#   schedule:
+#     - cron: '*/5 * * * *' # At 00:00 on Monday
 
-jobs:
-  My_tests:
-    runs-on: ubuntu-latest
-    steps:
-      - name: 🍽️ Checkout the repo
-        uses: actions/checkout@v2 # checkout the repository content to github runner
+# jobs:
+#   My_tests:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: 🍽️ Checkout the repo
+#         uses: actions/checkout@v2 # checkout the repository content to github runner
+#eof*****************************Original Commented
 
       # - name: 🐍 Set up Python 3.8
       #   uses: actions/setup-python@v4
@@ -29,21 +31,24 @@ jobs:
 
       # - name: 🚀 Run Automation
       #   run: python sendmessage.py ${{ secrets.SENDMESS_TOKEM }}
-      - name: makenewfile
-        run: |
-          file_name=test_files.txt
-          current_time=$(date "+%Y.%m.%d-%H.%M.%S")
-          echo "print('$current_time')" > printest.py
 
-      - name: commit files
-        run: |
-          git config --local user.email "soheilipour@gmail.com"
-          git config --local user.name "u2u4u"
-          git add -A
-          git diff-index --quiet HEAD || (git commit -a -m "updated logs" --allow-empty)
+#*****************************Original Commented
+      # - name: makenewfile
+      #   run: |
+      #     file_name=test_files.txt
+      #     current_time=$(date "+%Y.%m.%d-%H.%M.%S")
+      #     echo "print('$current_time')" > printest.py
+
+      # - name: commit files
+      #   run: |
+      #     git config --local user.email "soheilipour@gmail.com"
+      #     git config --local user.name "u2u4u"
+      #     git add -A
+      #     git diff-index --quiet HEAD || (git commit -a -m "updated logs" --allow-empty)
           
-      - name: push changes
-        uses: ad-m/github-push-action@v0.6.0
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: main 
+      # - name: push changes
+      #   uses: ad-m/github-push-action@v0.6.0
+      #   with:
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      #     branch: main 
+#eof*****************************Original Commented
